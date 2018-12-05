@@ -22,8 +22,20 @@ body{
 h1{
     font-size: 85px;
     font-family: 'Black Han Sans', sans-serif;
+    margin-top: 80px;
 }
 .preview-block p{
     font-size: 55px;
     font-family: 'Black Han Sans', sans-serif;
+}
+button{
+    font-size: 25px;
+    font-family: 'Black Han Sans', sans-serif; 
+    background: blueviolet;
+    padding: 10px 20px 10px 20px;
+    margin-bottom: 40px;
+    cursor: pointer;
+    border-radius: 10px;
+    border: none;
+    text-decoration: none;
 }
