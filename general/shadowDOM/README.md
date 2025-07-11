@@ -1,0 +1,1 @@
+ShodowDOM is a browser technology that is designed for scoping variables, CSS and Web Components.
