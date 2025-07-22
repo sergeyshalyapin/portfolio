@@ -1,0 +1,17 @@
+{
+  "name": "crash-course",
+  "version": "1.0.0",
+  "description": "crash course",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node --env-file=.env --watch server"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "express": "^5.1.0"
+  }
+}

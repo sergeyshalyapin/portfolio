@@ -1,0 +1,10 @@
+GET http://localhost:3101/posts
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoidGVzdDIiLCJpYXQiOjE3NTMyMjI4OTN9.dBC4l1kuwtrDZRJEZynsTx_FojtNaurHwpKx-3MwR9g
+
+###
+POST http://localhost:3101/login
+Content-Type: application/json
+
+{
+  "username": "test2"
+}
