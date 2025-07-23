@@ -1,10 +1,18 @@
 GET http://localhost:3101/posts
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoidGVzdDIiLCJpYXQiOjE3NTMyMjI4OTN9.dBC4l1kuwtrDZRJEZynsTx_FojtNaurHwpKx-3MwR9g
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoidGVzdDEiLCJpYXQiOjE3NTMyNzM1MzYsImV4cCI6MTc1MzI3MzU2Nn0.LMWH6yOISm6CmfGoh_f14i4dSMc64QLAe9ci8ZEnsvc
 
 ###
-POST http://localhost:3101/login
+POST http://localhost:3102/token
 Content-Type: application/json
 
 {
-  "username": "test2"
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoidGVzdDEiLCJpYXQiOjE3NTMyNzM1MDN9.BS0UkfyQrUHtbkyv5wy4kNCtGaRavoqKNpdXuwGtLag"
+}
+
+###
+POST http://localhost:3102/login
+Content-Type: application/json
+
+{
+  "username": "test1"
 }

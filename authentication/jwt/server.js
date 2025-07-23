@@ -16,6 +16,8 @@ const authenticateToken = (req, res, next) => {
   const token = authHeader && authHeader.split(' ')[1];
   if (!token) return res.sendStatus(401);
 
+  console.log("Token:", process.env.ACCESS_TOKEN_SECRET);
+
   jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, user) => {
     if (err) return res.sendStatus(403);
     req.user = user;
@@ -30,18 +32,6 @@ app.get("/", (req, res) => {
 app.get("/posts", authenticateToken, (req, res) => {
   res.json(posts.filter(post => post.username === req.user.name));
 });
-
-app.post("/login", (req, res) => {
-  const { username } = req.body;
-
-  const user = {
-    name: username,
-  }
-
-  const accessToken = jwt.sign(user, process.env.ACCESS_TOKEN_SECRET);
-  res.json({ accessToken });
-});
-
 
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
