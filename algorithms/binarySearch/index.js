@@ -1,35 +1,35 @@
 const binarySearch = (list, target) => {
-  let low = 0;
-  let high = list.length - 1;
+  let lowIndex = 0;
+  let highIndex = list.length - 1;
 
-  if (target > list[high], target < list[low]) return "error";
-
-  let half = Math.floor((high - low)/2);
-  let guess = list[half];
+  if (target > list[highIndex], target < list[lowIndex]) return "error";
 
   // Steps for logging the search process
   // This is not necessary for the algorithm, but useful for debugging
   // and understanding how the binary search works
   let step = 1;
 
-  while(true) {
-    console.log("step ", step++, ", guess is", guess);
+  // The limit is the maximum number of steps needed to find the target
+  // ! Complexity of binary search is O(log n)
+  const limit = Math.floor(Math.log2(list.length)) + 1;
+
+  while(step <= limit) {
+    const halfIndex = Math.floor((highIndex + lowIndex) / 2);
+    const guess = list[halfIndex];
+
+    console.log("step", step, "out of", limit, ", guess is", guess);
 
     if (guess < target) {
-      low = half + 1;
+      lowIndex = halfIndex + 1;
 
     } else if (guess > target) {
-      high = half - 1;
+      highIndex = halfIndex - 1;
 
     } else {
-      break;
+      return guess;
     }
-
-    half = Math.round((high - low)/2 + low);
-    guess = list[half];
+    step++;
   }
-
-  return guess;
 }
 
 const testList = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
