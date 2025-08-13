@@ -13,7 +13,7 @@ const binarySearch = (list, target) => {
   // ! Complexity of binary search is O(log n)
   const limit = Math.floor(Math.log2(list.length)) + 1;
 
-  while(step <= limit) {
+  while(lowIndex <= highIndex && step <= limit) {
     const halfIndex = Math.floor((highIndex + lowIndex) / 2);
     const guess = list[halfIndex];
 

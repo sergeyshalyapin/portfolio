@@ -7,11 +7,11 @@ const quickSort = (arr) => {
     return arr;
   }
 
-  const pivot = arr[arr.length - 1]; // Choose the last element as the pivot
+  const pivot = arr[0]; // Choose the last element as the pivot
   const less = []; // Array for elements less than the pivot
   const greater = []; // Array for elements greater than or equal to the pivot
 
-  for (let i = 0; i < arr.length - 1; i++) { // Loop through all elements except the pivot
+  for (let i = 1; i < arr.length; i++) { // Loop through all elements except the pivot
     if (arr[i] < pivot) {
       less.push(arr[i]); // Elements less than pivot go to first part
     }

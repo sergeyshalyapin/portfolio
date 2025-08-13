@@ -44,6 +44,16 @@ function DependentProfileButton({
   );
 }
 
+const MouseTracker = ({ render }) => {
+  const [coords, setCoords] = useState({ x: 0, y: 0 });
+
+  return (
+    <div onMouseMove={(e) => setCoords({ x: e.clientX, y: e.clientY })}>
+      {render(coords)}
+    </div>
+  );
+};
+
 export default function App() {
   const listItems = products.map(product => (
     <li
@@ -63,7 +73,7 @@ export default function App() {
 
   const jsxObj = (
     <>
-      <h1>{user.name}</h1>
+      <MouseTracker render={({ x, y }) => <h1>The mouse is at {x}, {y}</h1>} />
       <img
         className="avatar"
         src={user.imageUrl}

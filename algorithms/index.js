@@ -1,0 +1,18 @@
+const nums = [2,7,5,5,11,15];
+const target = 10;
+
+const twoSum = (nums, target) => {
+  const numMap = new Map();
+
+  for (let i = 0; i < nums.length; i++) {
+    const complement = target - nums[i];
+    if (numMap.has(complement)) {
+      return [numMap.get(complement), i];
+    }
+    numMap.set(nums[i], i);
+  }
+
+  throw new Error("No two sum solution");
+}
+
+console.log("twoSum([2,7,5,5,11,15], 10):", twoSum(nums, target)); // [2, 3]
